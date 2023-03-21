@@ -39,16 +39,19 @@ const App = () => {
       secondaryColor: "#FFEEDF",
     },
   ];
+
   const [collaborators, setCollaborators] = useState([]);
 
   const newCollaborator = (collaborator) => {
     console.log(collaborator);
     setCollaborators([...collaborators, collaborator]);
   };
+
   return (
     <div className="App">
       <Banner />
       <Form
+        teams={teams.map((team) => team.name)}
         registeredEmployee={(collaborator) => newCollaborator(collaborator)}
       />
       {teams.map((team) => {
@@ -58,6 +61,7 @@ const App = () => {
             name={team.name}
             primaryColor={team.primaryColor}
             secondaryColor={team.secondaryColor}
+            collaborators={collaborators}
           />
         );
       })}

@@ -58,7 +58,7 @@ const Form = (props) => {
         <DropDown
           required={true}
           label="Time"
-          items={items}
+          items={props.teams}
           inValue={team}
           whenChanging={(inValue) => setTeam(inValue)}
         />
