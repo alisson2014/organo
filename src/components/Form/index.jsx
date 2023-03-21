@@ -4,7 +4,7 @@ import DropDown from "../DropDown";
 import Button from "../Button";
 import "./style.css";
 
-const Form = () => {
+const Form = (props) => {
   const [name, setName] = useState("");
   const [office, setOffice] = useState("");
   const [image, setImage] = useState("");
@@ -22,12 +22,12 @@ const Form = () => {
 
   const onSave = (event) => {
     event.preventDefault();
-    console.log(`
-    Form enviado\n 
-    Nome: ${name}\n 
-    Trabalho: ${office}\n 
-    Imagem: ${image}\n
-    Time: ${team}`);
+    props.registeredEmployee({
+      name: name,
+      office: office,
+      image: image,
+      team: team,
+    });
   };
 
   return (
