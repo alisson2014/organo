@@ -4,10 +4,14 @@ const DropDown = (props) => {
   return (
     <div className="dropDown">
       <label>{props.label}</label>
-      <select required={props.required}>
-        {props.items.map((item) => (
-          <option key={item}>{item}</option>
-        ))}
+      <select
+        onChange={(event) => props.whenChanging(event.target.value)}
+        value={props.inValue}
+        required={props.required}
+      >
+        {props.items.map((item) => {
+          return <option key={item}>{item}</option>;
+        })}
       </select>
     </div>
   );
