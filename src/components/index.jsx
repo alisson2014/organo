@@ -1,4 +1,4 @@
-import Banner from "./Banner";
-import Form from "./Form";
+import Banner from "./Molecules/Banner";
+import Form from "./Molecules/Form";
 
 export { Banner, Form };

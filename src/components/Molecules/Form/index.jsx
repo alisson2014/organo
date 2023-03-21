@@ -1,7 +1,7 @@
 import { useState } from "react";
-import TextField from "../TextField";
-import DropDown from "../DropDown";
-import Button from "../Button";
+import DropDown from "../../Atoms/DropDown";
+import TextField from "../../Atoms/TextField";
+import Button from "../../Atoms/Button";
 import "./style.css";
 
 const Form = (props) => {
