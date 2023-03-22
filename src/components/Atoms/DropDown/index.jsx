@@ -9,6 +9,7 @@ const DropDown = (props) => {
         value={props.inValue}
         required={props.required}
       >
+        <option value=""></option>
         {props.items.map((item) => {
           return <option key={item}>{item}</option>;
         })}

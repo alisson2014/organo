@@ -1,4 +1,9 @@
-.button {
+.buttonContainer {
+    margin-top: 8px;
+    text-align: center;
+}
+
+.buttonContainer .button {
     background-color: #6278F7;
     color: #FFF;
     border-radius: 10px;
@@ -8,8 +13,9 @@
     padding: 32px;
     margin: 16px 0;
     cursor: pointer;
+    transition: all .5s ease-in-out;
 }
 
-.button:hover {
+.buttonContainer .button:hover {
     color: #95FFD4;
 }

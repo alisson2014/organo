@@ -1,7 +1,11 @@
 import "./style.css";
 
 const Button = (props) => {
-  return <button className="button">{props.children}</button>;
+  return (
+    <div className="buttonContainer">
+      <button className="button">{props.children}</button>
+    </div>
+  );
 };
 
 export default Button;

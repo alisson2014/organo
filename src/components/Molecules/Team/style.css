@@ -8,4 +8,19 @@
     border-bottom: 4px solid #57C278;
     display: inline-block;
     padding-bottom: 8px;
+    font: normal 400 32px "Prata";
+    line-height: 43px;
+}
+
+.team .collaborators {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 32px;
+}
+
+@media (min-width: 340px) and (max-width: 960px) {
+    .team .collaborators {
+        gap: 32px;
+    }
 }

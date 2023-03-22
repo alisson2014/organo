@@ -1,7 +1,10 @@
 .dropDown label {
     display: block;
     margin-bottom: 8px;
-    font-size: 24px;
+    font-family: "Montserrat";
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
 }
 
 .dropDown select {

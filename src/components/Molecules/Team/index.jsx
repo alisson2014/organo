@@ -3,27 +3,33 @@ import Card from "../../Atoms/Card";
 
 const Team = (props) => {
   return (
-    <section
-      className="team"
-      style={{
-        backgroundColor: props.secondaryColor,
-      }}
-    >
-      <h3
+    props.collaborators.length > 0 && (
+      <section
+        className="team"
         style={{
-          borderColor: props.primaryColor,
+          backgroundColor: props.secondaryColor,
         }}
       >
-        {props.name}
-      </h3>
-      {props.collaborators.map((collaborator) => (
-        <Card
-          name={collaborator.name}
-          office={collaborator.office}
-          image={collaborator.image}
-        />
-      ))}
-    </section>
+        <h3
+          style={{
+            borderColor: props.primaryColor,
+          }}
+        >
+          {props.name}
+        </h3>
+        <div className="collaborators">
+          {props.collaborators.map((collaborator) => (
+            <Card
+              backgroundColor={props.primaryColor}
+              key={collaborator.name}
+              name={collaborator.name}
+              office={collaborator.office}
+              image={collaborator.image}
+            />
+          ))}
+        </div>
+      </section>
+    )
   );
 };
 

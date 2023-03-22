@@ -28,6 +28,10 @@ const Form = (props) => {
       image: image,
       team: team,
     });
+    setName("");
+    setImage("");
+    setOffice("");
+    setTeam("");
   };
 
   return (
