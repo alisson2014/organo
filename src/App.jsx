@@ -53,10 +53,10 @@ const App = () => {
         teams={teams.map((team) => team.name)}
         registeredEmployee={(collaborator) => newCollaborator(collaborator)}
       />
-      {teams.map((team) => {
+      {teams.map((team, index) => {
         return (
           <Team
-            key={team.name}
+            key={index}
             name={team.name}
             primaryColor={team.primaryColor}
             secondaryColor={team.secondaryColor}

@@ -1,17 +1,17 @@
 import "./style.css";
 
-const DropDown = (props) => {
+const DropDown = ({ label, whenChanging, inValue, items, required }) => {
   return (
     <div className="dropDown">
-      <label>{props.label}</label>
+      <label>{label}</label>
       <select
-        onChange={(event) => props.whenChanging(event.target.value)}
-        value={props.inValue}
-        required={props.required}
+        onChange={(event) => whenChanging(event.target.value)}
+        value={inValue}
+        required={required}
       >
         <option value=""></option>
-        {props.items.map((item) => {
-          return <option key={item}>{item}</option>;
+        {items.map((item, index) => {
+          return <option key={index}>{item}</option>;
         })}
       </select>
     </div>

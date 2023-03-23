@@ -1,27 +1,27 @@
 import "./style.css";
 import Card from "../../Atoms/Card";
 
-const Team = (props) => {
+const Team = ({ name, primaryColor, secondaryColor, collaborators }) => {
   return (
-    props.collaborators.length > 0 && (
+    collaborators.length > 0 && (
       <section
         className="team"
         style={{
-          backgroundColor: props.secondaryColor,
+          backgroundColor: secondaryColor,
         }}
       >
         <h3
           style={{
-            borderColor: props.primaryColor,
+            borderColor: primaryColor,
           }}
         >
-          {props.name}
+          {name}
         </h3>
         <div className="collaborators">
-          {props.collaborators.map((collaborator) => (
+          {collaborators.map((collaborator, index) => (
             <Card
-              backgroundColor={props.primaryColor}
-              key={collaborator.name}
+              backgroundColor={primaryColor}
+              key={index}
               name={collaborator.name}
               office={collaborator.office}
               image={collaborator.image}

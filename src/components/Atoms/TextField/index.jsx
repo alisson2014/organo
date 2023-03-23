@@ -1,21 +1,18 @@
-import { useState } from "react";
 import "./style.css";
 
-const TextField = (props) => {
-  const [inValue, setInValue] = useState("Irineu");
-
+const TextField = ({ whenChanging, label, inValue, required, placeHolder }) => {
   const whenTyping = (event) => {
-    props.whenChanging(event.target.value);
+    whenChanging(event.target.value);
   };
 
   return (
     <div className="textField">
-      <label>{props.label}</label>
+      <label>{label}</label>
       <input
-        value={props.inValue}
+        value={inValue}
         onChange={whenTyping}
-        required={props.required}
-        placeholder={props.placeHolder}
+        required={required}
+        placeholder={placeHolder}
       />
     </div>
   );

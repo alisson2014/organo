@@ -4,25 +4,15 @@ import TextField from "../../Atoms/TextField";
 import Button from "../../Atoms/Button";
 import "./style.css";
 
-const Form = (props) => {
+const Form = ({ registeredEmployee, teams }) => {
   const [name, setName] = useState("");
   const [office, setOffice] = useState("");
   const [image, setImage] = useState("");
   const [team, setTeam] = useState("");
 
-  const items = [
-    "Progamação",
-    "Front-End",
-    "Data science",
-    "Devops",
-    "UX e Design",
-    "Mobile",
-    "Inovação e Gestão",
-  ];
-
   const onSave = (event) => {
     event.preventDefault();
-    props.registeredEmployee({
+    registeredEmployee({
       name: name,
       office: office,
       image: image,
@@ -62,7 +52,7 @@ const Form = (props) => {
         <DropDown
           required={true}
           label="Time"
-          items={props.teams}
+          items={teams}
           inValue={team}
           whenChanging={(inValue) => setTeam(inValue)}
         />
