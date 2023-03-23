@@ -2,43 +2,36 @@ import { useState } from "react";
 import { Banner, Form, Team, Footer } from "./components";
 
 const App = () => {
-  const teams = [
+  const [teams, setTeams] = useState([
     {
       name: "Progamação",
-      primaryColor: "#57C278",
-      secondaryColor: "#D9F7E9",
+      color: "#57C278",
     },
     {
       name: "Front-End",
-      primaryColor: "#82CFFA",
-      secondaryColor: "#E8F8FF",
+      color: "#82CFFA",
     },
     {
       name: "Data science",
-      primaryColor: "#A6D157",
-      secondaryColor: "#F0F8E2",
+      color: "#A6D157",
     },
     {
       name: "Devops",
-      primaryColor: "#E06B69",
-      secondaryColor: "#FDE7E8",
+      color: "#E06B69",
     },
     {
       name: "UX e Design",
-      primaryColor: "#DB6EBF",
-      secondaryColor: "#FAE9F5",
+      color: "#DB6EBF",
     },
     {
       name: "Mobile",
-      primaryColor: "#FFBA05",
-      secondaryColor: "#FFF5D9",
+      color: "#FFBA05",
     },
     {
       name: "Inovação e Gestão",
-      primaryColor: "#FF8A29",
-      secondaryColor: "#FFEEDF",
+      color: "#FF8A29",
     },
-  ];
+  ]);
 
   const [collaborators, setCollaborators] = useState([]);
 
@@ -48,6 +41,17 @@ const App = () => {
 
   const deleteCollaborator = () => {
     console.log("Deletando colaborador");
+  };
+
+  const changeColorTeam = (color, name) => {
+    setTeams(
+      teams.map((team) => {
+        if (team.name === name) {
+          team.color = color;
+        }
+        return team;
+      })
+    );
   };
 
   return (
@@ -61,10 +65,10 @@ const App = () => {
         return (
           <Team
             key={index}
-            whenDeleting={deleteCollaborator}
             name={team.name}
-            primaryColor={team.primaryColor}
-            secondaryColor={team.secondaryColor}
+            changeColor={changeColorTeam}
+            whenDeleting={deleteCollaborator}
+            color={team.color}
             collaborators={collaborators.filter(
               (collaborator) => collaborator.team === team.name
             )}

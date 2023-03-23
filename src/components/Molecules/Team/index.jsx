@@ -1,24 +1,26 @@
-import "./style.css";
+import hexToRgba from "hex-to-rgba";
 import Card from "../../Atoms/Card";
+import "./style.css";
 
-const Team = ({
-  name,
-  primaryColor,
-  secondaryColor,
-  collaborators,
-  whenDeleting,
-}) => {
+const Team = ({ name, color, collaborators, whenDeleting, changeColor }) => {
   return (
     collaborators.length > 0 && (
       <section
         className="team"
         style={{
-          backgroundColor: secondaryColor,
+          backgroundImage: "url(/images/fundo.png)",
+          backgroundColor: hexToRgba(color, "0.6"),
         }}
       >
+        <input
+          onChange={(event) => changeColor(event.target.value, name)}
+          value={color}
+          type="color"
+          className="inputColor"
+        />
         <h3
           style={{
-            borderColor: primaryColor,
+            borderColor: color,
           }}
         >
           {name}
@@ -27,7 +29,7 @@ const Team = ({
           {collaborators.map((collaborator, index) => {
             return (
               <Card
-                backgroundColor={primaryColor}
+                backgroundColor={color}
                 key={index}
                 name={collaborator.name}
                 office={collaborator.office}
