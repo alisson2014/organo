@@ -1,4 +1,5 @@
 .collaboratorCard {
+    position: relative;
     width: 280px;
 }
 
@@ -35,4 +36,10 @@
     padding: 0 16px;
     font: normal 400 16px "Montserrat";
     line-height: 20px;
+}
+
+.collaboratorCard .delete {
+    position: absolute;
+    right: -10px;
+    top: -10px;
 }

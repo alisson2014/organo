@@ -46,6 +46,10 @@ const App = () => {
     setCollaborators([...collaborators, collaborator]);
   };
 
+  const deleteCollaborator = () => {
+    console.log("Deletando colaborador");
+  };
+
   return (
     <div className="App">
       <Banner />
@@ -57,6 +61,7 @@ const App = () => {
         return (
           <Team
             key={index}
+            whenDeleting={deleteCollaborator}
             name={team.name}
             primaryColor={team.primaryColor}
             secondaryColor={team.secondaryColor}

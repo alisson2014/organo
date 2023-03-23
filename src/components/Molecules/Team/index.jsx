@@ -1,7 +1,13 @@
 import "./style.css";
 import Card from "../../Atoms/Card";
 
-const Team = ({ name, primaryColor, secondaryColor, collaborators }) => {
+const Team = ({
+  name,
+  primaryColor,
+  secondaryColor,
+  collaborators,
+  whenDeleting,
+}) => {
   return (
     collaborators.length > 0 && (
       <section
@@ -18,15 +24,18 @@ const Team = ({ name, primaryColor, secondaryColor, collaborators }) => {
           {name}
         </h3>
         <div className="collaborators">
-          {collaborators.map((collaborator, index) => (
-            <Card
-              backgroundColor={primaryColor}
-              key={index}
-              name={collaborator.name}
-              office={collaborator.office}
-              image={collaborator.image}
-            />
-          ))}
+          {collaborators.map((collaborator, index) => {
+            return (
+              <Card
+                backgroundColor={primaryColor}
+                key={index}
+                name={collaborator.name}
+                office={collaborator.office}
+                image={collaborator.image}
+                whenDeleting={whenDeleting}
+              />
+            );
+          })}
         </div>
       </section>
     )
