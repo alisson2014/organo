@@ -43,3 +43,7 @@
     right: -10px;
     top: -10px;
 }
+
+.collaboratorCard .footer .favorite {
+    margin-top: 20px;
+}

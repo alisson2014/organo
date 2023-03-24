@@ -44,6 +44,7 @@ const App = () => {
   const inicial = [
     {
       id: uuidv4(),
+      favorite: false,
       name: "JULIANA AMOASEI",
       office: "Desenvolvedora de software e instrutora",
       image:
@@ -52,6 +53,7 @@ const App = () => {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: "DANIEL ARTINE",
       office: "Engenheiro de Software na Stone Age",
       image:
@@ -60,6 +62,7 @@ const App = () => {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: "GUILHERME LIMA",
       office: "Desenvolvedor Python e JavaScript na Alura",
       image:
@@ -68,6 +71,7 @@ const App = () => {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: "PAULO SILVEIRA",
       office: "Hipster e CEO da Alura",
       image:
@@ -76,6 +80,7 @@ const App = () => {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: "JULIANA AMOASEI",
       office: "Desenvolvedora de software e instrutora",
       image:
@@ -84,6 +89,7 @@ const App = () => {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: "DANIEL ARTINE",
       office: "Engenheiro de Software na Stone Age",
       image:
@@ -92,6 +98,7 @@ const App = () => {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: "GUILHERME LIMA",
       office: "Desenvolvedor Python e JavaScript na Alura",
       image:
@@ -100,6 +107,7 @@ const App = () => {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: "PAULO SILVEIRA",
       office: "Hipster e CEO da Alura",
       image:
@@ -108,6 +116,7 @@ const App = () => {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: "JULIANA AMOASEI",
       office: "Desenvolvedora de software e instrutora",
       image:
@@ -116,6 +125,7 @@ const App = () => {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: "DANIEL ARTINE",
       office: "Engenheiro de Software na Stone Age",
       image:
@@ -124,6 +134,7 @@ const App = () => {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: "GUILHERME LIMA",
       office: "Desenvolvedor Python e JavaScript na Alura",
       image:
@@ -132,6 +143,7 @@ const App = () => {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: "PAULO SILVEIRA",
       office: "Hipster e CEO da Alura",
       image:
@@ -140,6 +152,7 @@ const App = () => {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: "JULIANA AMOASEI",
       office: "Desenvolvedora de software e instrutora",
       image:
@@ -155,6 +168,7 @@ const App = () => {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: "GUILHERME LIMA",
       office: "Desenvolvedor Python e JavaScript na Alura",
       image:
@@ -163,6 +177,7 @@ const App = () => {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: "PAULO SILVEIRA",
       office: "Hipster e CEO da Alura",
       image:
@@ -171,6 +186,7 @@ const App = () => {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: "JULIANA AMOASEI",
       office: "Desenvolvedora de software e instrutora",
       image:
@@ -179,6 +195,7 @@ const App = () => {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: "DANIEL ARTINE",
       office: "Engenheiro de Software na Stone Age",
       image:
@@ -187,6 +204,7 @@ const App = () => {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: "GUILHERME LIMA",
       office: "Desenvolvedor Python e JavaScript na Alura",
       image:
@@ -195,6 +213,7 @@ const App = () => {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: "PAULO SILVEIRA",
       office: "Hipster e CEO da Alura",
       image:
@@ -203,6 +222,7 @@ const App = () => {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: "JULIANA AMOASEI",
       office: "Desenvolvedora de software e instrutora",
       image:
@@ -211,6 +231,7 @@ const App = () => {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: "DANIEL ARTINE",
       office: "Engenheiro de Software na Stone Age",
       image:
@@ -219,6 +240,7 @@ const App = () => {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: "GUILHERME LIMA",
       office: "Desenvolvedor Python e JavaScript na Alura",
       image:
@@ -227,6 +249,7 @@ const App = () => {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: "PAULO SILVEIRA",
       office: "Hipster e CEO da Alura",
       image:
@@ -258,6 +281,16 @@ const App = () => {
     setTeams([...teams, { name, color, id: uuidv4() }]);
   };
 
+  const changeFavorite = (id) => {
+    setCollaborators(
+      collaborators.map((collaborator) => {
+        if (collaborator.id === id)
+          collaborator.favorite = !collaborator.favorite;
+        return collaborator;
+      })
+    );
+  };
+
   return (
     <div className="App">
       <Banner />
@@ -276,6 +309,7 @@ const App = () => {
             id={team.id}
             changeColor={changeColorTeam}
             whenDeleting={deleteCollaborator}
+            byFavorite={changeFavorite}
             color={team.color}
             collaborators={collaborators.filter(
               (collaborator) => collaborator.team === team.name

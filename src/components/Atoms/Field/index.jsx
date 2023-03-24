@@ -5,7 +5,7 @@ const Field = ({
   whenChanging,
   label,
   inValue,
-  required,
+  required = false,
   placeHolder,
 }) => {
   const whenTyping = (event) => {

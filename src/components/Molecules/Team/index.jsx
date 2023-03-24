@@ -4,11 +4,13 @@ import "./style.css";
 
 const Team = ({
   name,
+  favorite,
   id,
   color,
   collaborators,
   whenDeleting,
   changeColor,
+  byFavorite,
 }) => {
   return (
     collaborators.length > 0 && (
@@ -42,6 +44,8 @@ const Team = ({
                 office={collaborator.office}
                 image={collaborator.image}
                 id={collaborator.id}
+                favorite={collaborator.favorite}
+                byFavorite={byFavorite}
                 whenDeleting={whenDeleting}
               />
             );
