@@ -2,7 +2,14 @@ import hexToRgba from "hex-to-rgba";
 import Card from "../../Atoms/Card";
 import "./style.css";
 
-const Team = ({ name, color, collaborators, whenDeleting, changeColor }) => {
+const Team = ({
+  name,
+  id,
+  color,
+  collaborators,
+  whenDeleting,
+  changeColor,
+}) => {
   return (
     collaborators.length > 0 && (
       <section
@@ -13,7 +20,7 @@ const Team = ({ name, color, collaborators, whenDeleting, changeColor }) => {
         }}
       >
         <input
-          onChange={(event) => changeColor(event.target.value, name)}
+          onChange={(event) => changeColor(event.target.value, id)}
           value={color}
           type="color"
           className="inputColor"
@@ -34,6 +41,7 @@ const Team = ({ name, color, collaborators, whenDeleting, changeColor }) => {
                 name={collaborator.name}
                 office={collaborator.office}
                 image={collaborator.image}
+                id={collaborator.id}
                 whenDeleting={whenDeleting}
               />
             );

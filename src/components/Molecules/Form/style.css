@@ -1,10 +1,12 @@
-.form {
+.formContainer {
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
-    margin: 80px 0;
+    margin: 80px 50px;
 }
 
-.form h2 {
+.formContainer h2 {
     font-family: "Prata";
     font-style: normal;
     font-weight: 400;
@@ -12,8 +14,8 @@
     line-height: 43px;
 }
 
-.form form {
-    max-width: 80%;
+.form {
+    flex: 1;
     background-color: #F2F2F2;
     border-radius: 20px;
     padding: 36px 64px;

@@ -1,8 +1,8 @@
-.textField {
+.field {
     margin: 24px 0;
 }
 
-.textField label {
+.field label {
     display: block;
     margin-bottom: 8px;
     font-family: "Montserrat";
@@ -11,7 +11,7 @@
     line-height: 22px;
 }
 
-.textField input {
+.field input {
     background-color: #FFF;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
     width: 100%;
@@ -23,4 +23,9 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
+}
+
+.field-color input {
+    height: 40px;
+    padding: 5px 24px;
 }

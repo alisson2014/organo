@@ -1,14 +1,16 @@
 import { useState } from "react";
 import DropDown from "../../Atoms/DropDown";
-import TextField from "../../Atoms/TextField";
+import Field from "../../Atoms/Field";
 import Button from "../../Atoms/Button";
 import "./style.css";
 
-const Form = ({ registeredEmployee, teams }) => {
+const Form = ({ registeredEmployee, teams, whenCreatingTeam }) => {
   const [name, setName] = useState("");
   const [office, setOffice] = useState("");
   const [image, setImage] = useState("");
   const [team, setTeam] = useState("");
+  const [teamName, setTeamName] = useState("");
+  const [teamColor, setTeamColor] = useState("");
 
   const onSave = (event) => {
     event.preventDefault();
@@ -25,24 +27,24 @@ const Form = ({ registeredEmployee, teams }) => {
   };
 
   return (
-    <section className="form">
-      <form onSubmit={onSave}>
+    <section className="formContainer">
+      <form className="form" onSubmit={onSave}>
         <h2>Preencha os dados para criar o card do colaborador</h2>
-        <TextField
+        <Field
           required={true}
           label="Nome"
           placeHolder="Digite seu nome"
           inValue={name}
           whenChanging={(inValue) => setName(inValue)}
         />
-        <TextField
+        <Field
           required={true}
           label="Cargo"
           placeHolder="Digite seu cargo"
           inValue={office}
           whenChanging={(inValue) => setOffice(inValue)}
         />
-        <TextField
+        <Field
           required={true}
           label="Imagem"
           placeHolder="Digite o endereço da imagem"
@@ -56,7 +58,32 @@ const Form = ({ registeredEmployee, teams }) => {
           inValue={team}
           whenChanging={(inValue) => setTeam(inValue)}
         />
-        <Button>Criar card</Button>
+        <Button text="Criar card" />
+      </form>
+      <form
+        className="form"
+        onSubmit={(event) => {
+          event.preventDefault();
+          whenCreatingTeam({ name: teamName, color: teamColor });
+        }}
+      >
+        <h2>Preencha os dados para criar um novo time.</h2>
+        <Field
+          required={true}
+          label="Nome"
+          placeHolder="Digite o nome do time"
+          inValue={teamName}
+          whenChanging={(inValue) => setTeamName(inValue)}
+        />
+        <Field
+          type="color"
+          required={true}
+          label="Cor"
+          placeHolder="Digite sua cor"
+          inValue={teamColor}
+          whenChanging={(inValue) => setTeamColor(inValue)}
+        />
+        <Button text="Criar Time" />
       </form>
     </section>
   );

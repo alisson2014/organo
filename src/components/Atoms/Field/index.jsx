@@ -1,14 +1,22 @@
 import "./style.css";
 
-const TextField = ({ whenChanging, label, inValue, required, placeHolder }) => {
+const Field = ({
+  type = "text",
+  whenChanging,
+  label,
+  inValue,
+  required,
+  placeHolder,
+}) => {
   const whenTyping = (event) => {
     whenChanging(event.target.value);
   };
 
   return (
-    <div className="textField">
+    <div className={`field field-${type}`}>
       <label>{label}</label>
       <input
+        type={type}
         value={inValue}
         onChange={whenTyping}
         required={required}
@@ -18,4 +26,4 @@ const TextField = ({ whenChanging, label, inValue, required, placeHolder }) => {
   );
 };
 
-export default TextField;
+export default Field;

@@ -1,9 +1,9 @@
 import "./style.css";
 
-const Button = (props) => {
+const Button = ({ text }) => {
   return (
     <div className="buttonContainer">
-      <button className="button">{props.children}</button>
+      <button className="button">{text}</button>
     </div>
   );
 };
