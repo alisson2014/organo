@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { Banner, Form, Team, Footer } from "./components";
+import { Banner, Form, Team, Footer, ButtonAdd } from "./components";
 
 const App = () => {
   const [teams, setTeams] = useState([
@@ -259,6 +259,7 @@ const App = () => {
   ];
 
   const [collaborators, setCollaborators] = useState(inicial);
+  const [form, setForm] = useState(false);
 
   const deleteCollaborator = (id) => {
     setCollaborators(
@@ -294,13 +295,16 @@ const App = () => {
   return (
     <div className="App">
       <Banner />
-      <Form
-        whenCreatingTeam={regristredTeam}
-        teams={teams.map((team) => team.name)}
-        registeredEmployee={(collaborator) =>
-          setCollaborators([...collaborators, collaborator])
-        }
-      />
+      {form ? (
+        <Form
+          whenCreatingTeam={regristredTeam}
+          teams={teams.map((team) => team.name)}
+          registeredEmployee={(collaborator) =>
+            setCollaborators([...collaborators, collaborator])
+          }
+        />
+      ) : null}
+      <ButtonAdd isVisible={() => setForm(!form)} />
       {teams.map((team, index) => {
         return (
           <Team
