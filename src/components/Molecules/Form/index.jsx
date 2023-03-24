@@ -12,7 +12,7 @@ const Form = ({ registeredEmployee, teams, whenCreatingTeam }) => {
   const [teamName, setTeamName] = useState("");
   const [teamColor, setTeamColor] = useState("");
 
-  const onSave = (event) => {
+  const onSaveCollaborator = (event) => {
     event.preventDefault();
     registeredEmployee({
       name: name,
@@ -28,7 +28,7 @@ const Form = ({ registeredEmployee, teams, whenCreatingTeam }) => {
 
   return (
     <section className="formContainer">
-      <form className="form" onSubmit={onSave}>
+      <form className="form" onSubmit={onSaveCollaborator}>
         <h2>Preencha os dados para criar o card do colaborador</h2>
         <Field
           required={true}

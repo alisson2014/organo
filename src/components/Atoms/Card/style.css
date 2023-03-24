@@ -21,7 +21,7 @@
     border-radius: 0px 0px 10px 10px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
 }
 
 .collaboratorCard .footer h4 {
@@ -46,4 +46,5 @@
 
 .collaboratorCard .footer .favorite {
     margin-top: 20px;
+    cursor: pointer;
 }

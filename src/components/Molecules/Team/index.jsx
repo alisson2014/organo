@@ -1,10 +1,10 @@
 import hexToRgba from "hex-to-rgba";
 import Card from "../../Atoms/Card";
+import Field from "../../Atoms/Field";
 import "./style.css";
 
 const Team = ({
   name,
-  favorite,
   id,
   color,
   collaborators,
@@ -27,13 +27,7 @@ const Team = ({
           type="color"
           className="inputColor"
         />
-        <h3
-          style={{
-            borderColor: color,
-          }}
-        >
-          {name}
-        </h3>
+        <h3 style={{ borderColor: color }}>{name}</h3>
         <div className="collaborators">
           {collaborators.map((collaborator, index) => {
             return (

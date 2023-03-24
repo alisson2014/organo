@@ -1,9 +1,7 @@
 .dropDown label {
     display: block;
     margin-bottom: 8px;
-    font-family: "Montserrat";
-    font-weight: 600;
-    font-size: 18px;
+    font: normal 600 18px "Montserrat";
     line-height: 22px;
 }
 

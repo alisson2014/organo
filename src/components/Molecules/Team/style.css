@@ -11,9 +11,8 @@
 }
 
 .team h3 {
-    font-size: 32px;
-    border-bottom: 4px solid #57C278;
     display: inline-block;
+    border-bottom: 4px solid #57C278;
     padding-bottom: 8px;
     font: normal 400 32px "Prata";
     line-height: 43px;

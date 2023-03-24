@@ -12,6 +12,10 @@
     gap: 38px;
 }
 
+.footer .socialMedia img {
+    width: 35px;
+}
+
 .footer .credits {
     display: flex;
     align-items: center;
@@ -20,4 +24,5 @@
 
 .footer .credits p {
     color: #FFF;
+    font: normal 500 20px "Montserrat";
 }
