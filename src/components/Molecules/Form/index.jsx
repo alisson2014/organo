@@ -26,6 +26,13 @@ const Form = ({ registeredEmployee, teams, whenCreatingTeam }) => {
     setTeam("");
   };
 
+  const onSaveTeam = (event) => {
+    event.preventDefault();
+    whenCreatingTeam({ name: teamName, color: teamColor });
+    setTeamName("");
+    setTeamColor("");
+  };
+
   return (
     <section className="formContainer">
       <form className="form" onSubmit={onSaveCollaborator}>
@@ -60,13 +67,7 @@ const Form = ({ registeredEmployee, teams, whenCreatingTeam }) => {
         />
         <Button text="Criar card" />
       </form>
-      <form
-        className="form"
-        onSubmit={(event) => {
-          event.preventDefault();
-          whenCreatingTeam({ name: teamName, color: teamColor });
-        }}
-      >
+      <form className="form" onSubmit={onSaveTeam}>
         <h2>Preencha os dados para criar um novo time.</h2>
         <Field
           required={true}
