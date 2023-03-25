@@ -8,6 +8,7 @@
     position: absolute;
     top: 20px;
     right: 50px;
+    cursor: pointer;
 }
 
 .team h3 {
@@ -26,6 +27,11 @@
 }
 
 @media (min-width: 340px) and (max-width: 960px) {
+    .team .inputColor {
+        top: 30px;
+        right: 24px;
+    }
+
     .team .collaborators {
         gap: 32px;
     }
