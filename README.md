@@ -1,3 +1,42 @@
+<h1 align="center"> Organo </h1>
+
+<p align="center">
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-licença">Licença</a>
+</p>
+
+<p align="center">
+  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
+</p>
+
+<br>
+
+<p align="center">
+  <img alt="Organo" src=".github/preview.png" width="100%">
+</p>
+
+## 🚀 Tecnologias
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- ReactJS
+- JavaScript e CSS
+- Git e Github
+
+## 💻 Projeto
+
+Um organizador de pessoas e times para você se manter sempre atualizado sobre a composição da sua empresa! Desenvolvido com ReactJS, com objetivo de entender a fundo o funcionamento do useState e dos componentes.
+Projeto desenvolvido no curso de React da Alura.
+
+## :memo: Licença
+
+Esse projeto está sob a licença MIT.
+
+---
+
+Feito com ♥ by Alisson
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
